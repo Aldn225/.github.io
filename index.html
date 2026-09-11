@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="John Doe — IT Support Specialist, Network Engineer & Web Developer. Professional portfolio showcasing skills, projects and services." />
+  <title>John Doe | IT Support · Networking · Web Development</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Background canvas (network mesh) ===== -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===== Header / Navigation ===== -->
+  <header class="site-header" id="site-header">
+    <nav class="nav container" aria-label="Primary">
+      <a href="#home" class="brand">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span class="brand-name">John<span class="accent">Doe</span></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <p class="hero-hello mono">// Hello, I am</p>
+        <h1 class="hero-name">John <span class="accent">Doe</span></h1>
+        <p class="hero-role">I work across <span class="accent" id="typed-role"></span><span class="caret"></span></p>
+        <p class="hero-desc">
+          IT Support Specialist, Network Engineer and Web Developer with 8+ years of experience
+          keeping businesses online, secure and fast — from cable runs to cloud deployments.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        </div>
+        <div class="hero-social">
+          <a href="#" aria-label="GitHub" title="GitHub">GitHub</a>
+          <a href="#" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a>
+          <a href="#" aria-label="X" title="X">X</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="terminal" role="img" aria-label="Terminal window showing system status">
+          <div class="terminal-bar">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">john@it-ops ~ uptime</span>
+          </div>
+          <pre class="terminal-body" id="terminal-body">$ uptime
+ up 3 years, 142 days — 99.98% availability
+$ ping business-critical-services
+ 64 bytes ... time=0.4ms  <span class="ok">OK</span>
+$ netstat -an | grep LISTEN
+ TCP *:443 (nginx)  <span class="ok">SECURED/TLS1.3</span>
+$ systemctl status helpdesk
+ ● Active: resolving tickets <span class="ok">(avg 12 min)</span>
+$ </pre>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll to about section">↓</a>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-tag mono">// 01. About</p>
+        <h2 class="section-title">Reliable technology,<br />running quietly in the background.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I help companies of every size design, secure and maintain the digital infrastructure
+            their teams depend on. Whether it's rebuilding a campus network, hardening a server
+            fleet, or shipping a fast, accessible web application — I bring a sysadmin's rigor
+            and a developer's curiosity to every project.
+          </p>
+          <p>
+            My philosophy is simple: <strong>great IT is invisible.</strong> When the network is
+            fast, the tickets are few, and the website just works — that's when I know I've
+            done my job well.
+          </p>
+          <ul class="about-list">
+            <li><span class="mono accent">></span> 8+ years in IT operations &amp; development</li>
+            <li><span class="mono accent">></span> 200+ tickets resolved, 40+ projects delivered</li>
+            <li><span class="mono accent">></span> CompTIA Network+ · CCNA · AWS Cloud Practitioner</li>
+          </ul>
+        </div>
+        <div class="stats reveal">
+          <div class="stat-card"><span class="stat-num" data-target="8" data-suffix="+">0</span><span class="stat-label">Years Experience</span></div>
+          <div class="stat-card"><span class="stat-num" data-target="40" data-suffix="+">0</span><span class="stat-label">Projects Completed</span></div>
+          <div class="stat-card"><span class="stat-num" data-target="200" data-suffix="+">0</span><span class="stat-label">Issues Resolved</span></div>
+          <div class="stat-card"><span class="stat-num" data-target="99" data-suffix=".98%">0</span><span class="stat-label">Uptime Maintained</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-tag mono">// 02. Skills</p>
+        <h2 class="section-title">Tools of the trade</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="mono accent">01</span> IT Support &amp; Systems</h3>
+          <div class="skill" data-level="95"><div class="skill-info"><span>Windows / macOS / Linux Administration</span><span class="skill-pct">95%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          <div class="skill" data-level="90"><div class="skill-info"><span>Active Directory · GPO · Office 365 / M365</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          <div class="skill" data-level="92"><div class="skill-info"><span>Helpdesk &amp; Ticketing (Jira · Zendesk · Freshdesk)</span><span class="skill-pct">92%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          <div class="skill" data-level="85"><div class="skill-info"><span>Backup, Disaster Recovery &amp; Antivirus/EDR</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+        </div>
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="mono accent">02</span> Networking</h3>
+          <div class="skill" data-level="88"><div class="skill-info"><span>Cisco / MikroTik Routing &amp; Switching</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          <div class="skill" data-level="82"><div class="skill-info"><span>Firewalls &amp; VPN (pfSense · WireGuard · IPSec)</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          <div class="skill" data-level="80"><div class="skill-info"><span>Wi-Fi Design (Ubiquiti · Aruba · RADIUS)</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          <div class="skill" data-level="86"><div class="skill-info"><span>Network Monitoring (Zabbix · PRTG · Wireshark)</span><span class="skill-pct">86%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+        </div>
+        <div class="skill-group reveal">
+          <h3 class="skill-group-title"><span class="mono accent">03</span> Web Development</h3>
+          <div class="skill" data-level="90"><div class="skill-info"><span>HTML5 · CSS3 · JavaScript (ES6+)</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          <div class="skill" data-level="85"><div class="skill-info"><span>React · Vue · Responsive UI Design</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          <div class="skill" data-level="82"><div class="skill-info"><span>Node.js · Express · REST APIs</span><span class="skill-pct">82%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+          <div class="skill" data-level="78"><div class="skill-info"><span>MySQL · PostgreSQL · Docker</span><span class="skill-pct">78%</span></div><div class="skill-bar"><div class="skill-fill"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-tag mono">// 03. Services</p>
+        <h2 class="section-title">What I can do for you</h2>
+      </div>
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9 10l2 2 4-4"/></svg>
+          </div>
+          <h3>IT Support &amp; Managed Services</h3>
+          <p>Proactive maintenance, rapid remote/on-site support, endpoint management and user onboarding — keeping your team productive around the clock.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5 6.5 17M12 7.5 17.5 17M7.5 19h9"/></svg>
+          </div>
+          <h3>Network Design &amp; Security</h3>
+          <p>LAN/WLAN planning, VLAN segmentation, firewall rules, VPN tunnels and monitoring — networks built for speed, scale and security.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+          </div>
+          <h3>Web Development</h3>
+          <p>Fast, accessible, SEO-friendly websites and internal tools — from landing pages to dashboards, built with modern stacks and deployed on reliable infrastructure.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-tag mono">// 04. Projects</p>
+        <h2 class="section-title">Selected work</h2>
+      </div>
+      <div class="filter-bar reveal" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="network">Networking</button>
+        <button class="filter-btn" data-filter="support">IT Support</button>
+        <button class="filter-btn" data-filter="web">Web Dev</button>
+      </div>
+      <div class="projects-grid" id="projects-grid">
+        <article class="project-card reveal" data-category="network">
+          <div class="project-top"><span class="project-cat">Networking</span><span class="mono project-year">2025</span></div>
+          <h3>Campus Network Overhaul</h3>
+          <p>Redesigned a 3-building office network: new core switching, VLAN segmentation, RADIUS-authenticated Wi-Fi and redundant firewalls — zero downtime cutover.</p>
+          <div class="project-stack"><span>Cisco</span><span>pfSense</span><span>Zabbix</span></div>
+        </article>
+        <article class="project-card reveal" data-category="web">
+          <div class="project-top"><span class="project-cat">Web Dev</span><span class="mono project-year">2025</span></div>
+          <h3>Internal Asset Portal</h3>
+          <p>Full-stack inventory and ticketing portal for a 120-seat company — barcode scanning, automated reports and a clean admin dashboard.</p>
+          <div class="project-stack"><span>React</span><span>Node.js</span><span>PostgreSQL</span></div>
+        </article>
+        <article class="project-card reveal" data-category="support">
+          <div class="project-top"><span class="project-cat">IT Support</span><span class="mono project-year">2024</span></div>
+          <h3>Managed IT for a 60-Person Firm</h3>
+          <p>Ongoing support contract covering endpoints, M365 tenancy, backup/DR and security training — cut recurring ticket volume by 45% in year one.</p>
+          <div class="project-stack"><span>Intune</span><span>Veeam</span><span>EDR</span></div>
+        </article>
+        <article class="project-card reveal" data-category="network">
+          <div class="project-top"><span class="project-cat">Networking</span><span class="mono project-year">2024</span></div>
+          <h3>Secure Site-to-Site VPN Mesh</h3>
+          <p>Deployed encrypted tunnels between 5 branch offices with centralized monitoring and failover — replacing expensive leased lines.</p>
+          <div class="project-stack"><span>WireGuard</span><span>MikroTik</span><span>PRTG</span></div>
+        </article>
+        <article class="project-card reveal" data-category="web">
+          <div class="project-top"><span class="project-cat">Web Dev</span><span class="mono project-year">2023</span></div>
+          <h3>Company Website Rebuild</h3>
+          <p>Rebuilt a legacy corporate site into a fast static site with a headless CMS — Lighthouse scores from 58 to 98 and +32% inbound leads.</p>
+          <div class="project-stack"><span>JavaScript</span><span>11ty</span><span>Netlify</span></div>
+        </article>
+        <article class="project-card reveal" data-category="support">
+          <div class="project-top"><span class="project-cat">IT Support</span><span class="mono project-year">2023</span></div>
+          <h3>Helpdesk Automation Toolkit</h3>
+          <p>Scripted onboarding/offboarding, software deployment and patch compliance with PowerShell and Python — saving ~10 hours per week.</p>
+          <div class="project-stack"><span>PowerShell</span><span>Python</span><span>PDQ</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="section-tag mono">// 05. Contact</p>
+        <h2 class="section-title">Let's keep your systems running.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-lead">Need a network designed, a website built, or a support plan for your team? Send a message — I usually reply within one business day.</p>
+          <ul class="contact-list">
+            <li><span class="mono accent">email&nbsp;&nbsp;&nbsp;→</span> <a href="mailto:john.doe@example.com">john.doe@example.com</a></li>
+            <li><span class="mono accent">phone&nbsp;&nbsp;→</span> <a href="tel:+15551234567">+1 (555) 123-4567</a></li>
+            <li><span class="mono accent">github&nbsp;→</span> <a href="#" rel="noopener">github.com/johndoe</a></li>
+            <li><span class="mono accent">based&nbsp;&nbsp;→</span> Springfield, USA · remote worldwide</li>
+          </ul>
+        </div>
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="jane@company.com" required />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject" placeholder="Network setup for new office" />
+          </div>
+          <div class="form-field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project or issue..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="mono">&lt;/&gt; built by John Doe — HTML · CSS · JavaScript</p>
+      <p>© <span id="year"></span> John Doe. All rights reserved.</p>
+      <a href="#home" class="back-top" aria-label="Back to top">↑ top</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
